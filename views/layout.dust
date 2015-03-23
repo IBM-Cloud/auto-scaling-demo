@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Auto Scaling Demo</title>
+    <meta name="description" content="Sample app to demonstrate Auto-Scaling service for Bluemix">
+    <meta name="viewport" content="width=1024, maximum-scale=1">
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+  <div id="screen-wrapper">
+    <div class="container-fluid">
+      {+content}
+          This is the base content.
+      {/content}
+    </div>
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit">Made by <a href="http://twitter.com/jepeyser">@jepeyser</a>. Powered by <a href="http://bluemix.net" target="_blank">IBM Bluemix</a>.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Set initial mem values for gauges -->
+  <script>
+    var totalMem = {memLimit},
+        initialUsedMem = {memInUse},
+        initialCpuUsage = {cpuUsage};
+  </script>
+
+  <!-- Run all vendor JS scripts -->
+  <script src="javascript/jquery-1.11.2.min.js"></script>
+  <script src="javascript/gauge.min.js"></script>
+  <script src="javascript/manipulateGauges.js"></script>
+  <script src="javascript/socket.io.js"> </script>
+
+  <!-- Subscribe to the memory and CPU change event sockets-->
+  <script>
+    var socket = io();
+
+    /* Subscribe the client to memory change events */
+    socket.on("memoryChange", function(newMem) {
+      memoryGauge = updateGauge(true, memoryGauge, newMem['newMem']);
+      console.log("New mem: ", newMem['newMem']);
+    });
+
+    /* Subscribe the client to CPU utilization events */
+    socket.on("cpuUsage", function(newCpuAvg) {
+      /* Since we cannot check for update CPU value in app.js, we check here */
+      if (cpuGauge.getValue() !== newCpuAvg['newCpuAvg'])
+      {
+        cpuGauge = updateGauge(false, cpuGauge, newCpuAvg['newCpuAvg']);
+        console.log("New CPU usage: ", newCpuAvg['newCpuAvg']);
+      }
+    });
+  </script>
+
+  </body>
+</html>

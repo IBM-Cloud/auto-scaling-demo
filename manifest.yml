@@ -1,0 +1,10 @@
+---
+applications:
+- name: AutoScalingDemo
+  framework: node
+  runtime: node10
+  memory: 128M
+  instances: 1
+  host: autoscalingdemo
+  path: .
+  command: node app.js

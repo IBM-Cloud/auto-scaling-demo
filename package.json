@@ -1,0 +1,23 @@
+{
+    "name": "autoscalingdemo",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "express": "~4.0.0",
+        "body-parser": "~1.0.0",
+        "method-override": "~1.0.0",
+        "request": "~2.42.0",
+        "dustjs-linkedin": "*",
+        "consolidate": "*",
+        "socket.io": "~1.3.4",
+        "cron": "*",
+        "usage": "*"
+    },
+    "scripts": {
+        "start": "node app.js"
+    },
+    "engines": {
+        "node": "0.10.*"
+    },
+    "repository": {}
+}

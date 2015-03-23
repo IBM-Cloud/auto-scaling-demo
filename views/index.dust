@@ -1,0 +1,26 @@
+{>layout/}
+{<content}
+<div class="jumbotron">
+        <div class="header-text">
+            <h1>Auto-Scaling Demo</h1>
+            <h2>Monitor the performance and scaling of your applications hosted on IBM Bluemix.</h2>
+        </div>
+</div>
+<h3 class="instance-notifier">You are on instance {instanceIndex}</h3>
+<div id="gauge-background">
+    <ul>
+      <li class="gauge">
+          <h3 class="gauge-header">CPU Utilization</h3>
+          <p class="threshold">Scale out at 50% and in at 20%</p>
+          <canvas width=440 height=140 id="canvas-gauge-1"></canvas>
+          <div class="gauge-value" id="gauge-1-textfield"></div>
+      </li>
+      <li class="gauge">
+          <h3 class="gauge-header">Memory ({memLimit}MB)</h3>
+          <p class="threshold">Scale out at 60% and in at 40%</p>
+          <canvas width=440 height=140 id="canvas-gauge-2"></canvas>
+          <div class="gauge-value"  id="gauge-2-textfield"></div>
+      </li>
+    </ul>
+</div>
+{/content}
