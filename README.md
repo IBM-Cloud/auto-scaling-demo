@@ -1,11 +1,11 @@
 # Overview
 
 AutoScalingDemo is an app built on Node.js to demonstrate the ability
-of the Auto-Scaling service in Bluemix. It will demonstrate how policies
+of the Auto-Scaling service in IBM Bluemix. It helps to demonstrate how policies
 defined in the Auto-Scaling service can horizontally scale any application
 based on CPU utilization and memory usage. To showcase these features,
-the application will contain visual gauges to indicate changing metrics in
-the environment.
+the application contains visual gauges to indicate changing environmental
+performance metrics.
 
 
 ## Files
