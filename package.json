@@ -13,10 +13,14 @@
         "usage": "*"
     },
     "scripts": {
+        "install": "node admin.js track",
         "start": "node app.js"
     },
     "engines": {
         "node": "0.10.*"
     },
-    "repository": {}
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/IBM-Bluemix/auto-scaling-demo.git"
+    }
 }
