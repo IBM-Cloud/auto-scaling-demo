@@ -7,6 +7,13 @@ based on CPU utilization and memory usage. To showcase these features,
 the application contains visual gauges to indicate changing environmental
 performance metrics.
 
+## Running the app on Bluemix
+
+You can deploy your own instance of this app to Bluemix. To do this, you can either use the _Deploy to Bluemix_ button for an automated deployment or follow the steps below to create and deploy your app manually.
+  
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy)  
+**Note**: If deploying by this method, the app will fail on first deploy. After this initial failure, you must complete steps 7-8 below in order to successfully start your app.
+
 
 ## Files
 
