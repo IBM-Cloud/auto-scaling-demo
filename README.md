@@ -18,22 +18,22 @@ You can deploy your own instance of this app to Bluemix. To do this, you can eit
 
 The Node.js application has files as below:
 
-*   app.js
+*   `app.js`
 
 	This file contains the server side JavaScript code for the application written using the Node.js API
 
-*   package.json
+*   `package.json`
 
 	This file is required by the Node.js environment. It specifies the Node.js project name, dependencies, and other configurations of your Node.js application.
 
-*   node_modules/
+*   `node_modules/`
 
 	This directory contains the modules used and referenced in the application. It is required by the express framework in this sample application.
 
-*   public/
+*   `public/`
 
 	This directory contains public resources of the application. It contains the images, CSS, and JS resources. It is required by the express framework in this sample application.
 
-*   views/
+*   `views/`
 
 	This directory contains the .dust files used to display the content to the client accessing the application.# auto-scaling-demo
