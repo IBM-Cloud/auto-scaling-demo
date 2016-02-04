@@ -1,10 +1,16 @@
 ---
+declared-services:
+  app-auto-scaling:
+    label: Auto-Scaling
+    plan: free
 applications:
-- name: AutoScalingDemo
+- name: auto-scaling-demo
+  host: auto-scaling-demo
   framework: node
-  runtime: node10
+  runtime: node12
   memory: 128M
   instances: 1
-  host: autoscalingdemo
   path: .
   command: node app.js
+  services:
+  - app-auto-scaling

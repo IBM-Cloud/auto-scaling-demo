@@ -1,1 +1,8 @@
-node_modules/
+node_modules
+public/vendor/
+.DS_STORE
+npm-debug.log
+vcap-local.json
+README.md
+.gitignore
+.git/

@@ -1,26 +1,28 @@
 {>layout/}
 {<content}
-<div class="jumbotron">
-        <div class="header-text">
-            <h1>Auto-Scaling Demo</h1>
-            <h2>Monitor the performance and scaling of your applications hosted on IBM Bluemix.</h2>
-        </div>
+<div class="header">
+  <span class="logo">
+    <a class="logo-image" href="http://ibm.biz/auto-scaling-bluemix">
+      <img src="/images/bluemix-logo.svg" alt="bluemix">
+    </a>
+    <span class="logo-title">Auto Scaling Demo</span>
+  </span>
+  <div class="instance-div">Instance <span class="instance-num">#{instanceIndex}</span></div>
 </div>
-<h3 class="instance-notifier">You are on instance {instanceIndex}</h3>
 <div id="gauge-background">
-    <ul>
-      <li class="gauge">
-          <h3 class="gauge-header">CPU Utilization</h3>
-          <p class="threshold">Scale out at 50% and in at 20%</p>
-          <canvas width=440 height=140 id="canvas-gauge-1"></canvas>
-          <div class="gauge-value" id="gauge-1-textfield"></div>
-      </li>
-      <li class="gauge">
-          <h3 class="gauge-header">Memory ({memLimit}MB)</h3>
-          <p class="threshold">Scale out at 60% and in at 40%</p>
-          <canvas width=440 height=140 id="canvas-gauge-2"></canvas>
-          <div class="gauge-value"  id="gauge-2-textfield"></div>
-      </li>
-    </ul>
+  <div class="gauge-container">
+    <p class="gauge-header">CPU Utilization</h3>
+    <p class="threshold">Scale out at 50% and in at 20%</p>
+    <canvas id="canvas-gauge-1" class="gauge"></canvas>
+    <img class="gauge-value-hex" alt="cpu-value-hex">
+    <div class="gauge-value" id="gauge-1-textfield"></div>
+  </div>
+  <div class="gauge-container">
+    <h3 class="gauge-header">Memory ({memLimit}MB)</h3>
+    <p class="threshold">Scale out at 60% and in at 40%</p>
+    <canvas id="canvas-gauge-2" class="gauge"></canvas>
+    <img class="gauge-value-hex" alt="mem-value-hex">
+    <p class="gauge-value" id="gauge-2-textfield"></p>
+  </div>
 </div>
 {/content}

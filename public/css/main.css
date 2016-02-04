@@ -1,129 +1,152 @@
 html, body {
     font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 100%;
+    background-color: #103548;
     min-height: 100%;
     height: 100%;
     width: 100%;
     padding: 0;
     margin: 0;
+    line-height: 1;
 }
 
-.jumbotron {
-    margin-bottom: 30px;
-    padding-top: 20px;
-    padding-bottom: 40px;
-    background-color: #5aaaf9;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    color: white;
-    width: 100%;
+.container-fluid {
+  min-height: 100%;
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -4em;
+  padding: 0px;
 }
 
-.header-text{
-  font-family: MS Serif;
-  padding-left: 20px;
-  text-align: left;
+.header {
+  position: fixed;
+  z-index: 6000;
+  top: 0;
+  width: 100%;
+  display: flex;
+  height: 3.75rem;
+  background-color: #152934;
+  line-height: 3.75rem;
+  color: white;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding-right: 5%;
 }
 
-.instance-notifier {
-  font-size: 20px;
-  font-family: Palatino Linotype;
+@media screen and (min-width: 400px) {
+  .header {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
+
+.logo {
+  font-size: 1.1rem;
+  position: absolute;
+  overflow: hidden;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  -webkit-transform: translateX(-300px);
+  transform: translateX(-300px)
+}
+
+@media screen and (min-width: 400px) {
+  .logo {
+    position: relative;
+    padding-right: 1em;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    text-decoration: none;
+    font-weight: 200;
+  }
+}
+
+.logo-title {
+  padding-left: 3px;
+}
+
+.instance-div {
+  position: relative;
+  margin-left: auto;
+  font-size: 1.1rem;
+}
+
+.instance-num {
+  font-weight: bold;
+}
+
+#gauge-background {
+  margin-top: 3.75em;
+  padding-top: 15px;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #244556;
+}
+
+.gauge-container {
+  background: #2C5368;
+  margin: auto;
   text-align: center;
+  width: 300px;
 }
 
-#screen-wrapper {
-    width: 100%;
+.gauge-header {
+  font-size: 2rem;
+  padding-top: 8px;
+  color: white;
 }
 
-#footer {
+.threshold {
+  font-size: .9rem;
+  color: white;
+}
+
+.gauge-value-hex {
+  content: url("/images/hexagon.svg");
+  width: 50px;
+  height: 50px;
+}
+
+.gauge-value {
+  font-size: 1.5rem;
+  color: white;
+  margin-top: -36px;
+  padding-bottom: 20px;
+}
+
+.gauge {
+  margin: auto;
+  width: 300px;
+  height: 140px;
+}
+
+.footer {
     position: relative;
     bottom: 0;
-    font-family: "Helvetica Neue";
     font-size: 15px;
     width: 100%;
     height: 20px;
     padding-top: 5px;
-    margin-top: 20px;
-    color: #333;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-top: 30px;
     text-align: center;
 }
 
-#gauge-background {
-  margin: 0;
-  padding: 0;
+.footer, .push {
+  height: 1em;
+  clear: both;
+}
+
+.footer, a {
   color: white;
 }
 
-.gauge {
-  background: #5aaaf9;
-}
-
-.gauge-header {
-  font-size: 35px;
-  font-family: Georgia;
-  text-align: center;
-}
-
-.threshold {
-  font-size: 17px;
-  font-family: Georgia;
-  text-align: center;
-  margin-top: 4px;
-  margin-bottom: 0px;
-}
-
-.gauge-value {
-  font-size: 30px;
-  font-family: Roman;
-  padding-top: 5px;
-  text-align: center;
-}
-
-h1 {
-  font-size: 40px;
-}
-
-h2 {
-  font-size: 20px;
-}
-
-a {
-  color: #333;
-}
-
 a:hover {
-  color: #000;
-}
-
-a.button {
-  display: inline-block;
-  background: #56ba4a;
-  border: 3px solid #59a24f;
-  color: #fff;
-  border-radius: 5px;
-  font-size: 24px;
-  padding: 10px 30px;
-  text-decoration: none;
-  text-shadow: 1px 1px 1px #59a24f;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-  margin: 10px 20px 0 0;
-  -webkit-transition: all 0.25s ease;
-}
-
-a.button:hover {
-  background: #2f8325;
-  box-shadow: none;
-}
-
-li{
-  list-style: none;
-  float: left;
-  display: block;
-  bottom: -20px;
-  position: relative;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  border-radius: 50px;
-  background-position: 0 55px;
-  background-color: white;
-  margin: 10px;
+  color: #5596E6;
 }

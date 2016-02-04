@@ -3,28 +3,28 @@ var cpuGauge,
 	memoryGauge,
 	CPU_THRESHOLD = 50,
 	MEM_THRESHOLD = 80,
-	MAX_CPU_UTILIZATION = 100;
+	MAX_CPU_UTILIZATION = 100,
+	STROKE_COLOR = '#E0E0E0',
+	SAFE_COLOR = '#5596E6',
+	DANGER_COLOR = '#FF5050';
 
 // Initializes the gauge meter
-function initGauge(isMem, gauge, initialVal, maxVal, gaugeElement, gaugeTextElement)
-{
+function initGauge(isMem, gauge, initialVal, maxVal, gaugeElement, gaugeTextElement) {
 	// If memory gauge
-	if (isMem)
-	{
+	if (isMem) {
 		// If value is under threshold, set gauge color to green. Otherwise, set to red
 		if (initialVal < MEM_THRESHOLD)
-			newColor = '#12E84E';
+			newColor = SAFE_COLOR;
 		else
-			newColor = '#FF0000';
+			newColor = DANGER_COLOR;
 	}
 		// If CPU gauge
-	else
-	{
+	else {
 		// If value is under threshold, set gauge color to green. Otherwise, set to red
 		if (initialVal < CPU_THRESHOLD)
-			newColor = '#12E84E';
+			newColor = SAFE_COLOR;
 		else
-			newColor = '#FF0000';
+			newColor = DANGER_COLOR;
 	}
 
 	var initialOptions = {
@@ -34,12 +34,12 @@ function initGauge(isMem, gauge, initialVal, maxVal, gaugeElement, gaugeTextElem
 		pointer: {
 			length: .85, // The length of the pointer
 			strokeWidth: 0.025, // The width of the pointer
-			color: '#000000'
+			color: 'black'
 		},
 		limitMax: 'true',   // If true, the pointer will not go past the end of the gauge
 		colorStart: newColor, // Color of the outer gauge
 		colorStop: newColor, // Color of the inner gauge
-		strokeColor: '#E0E0E0',   // Color of the pointer
+		strokeColor: STROKE_COLOR,   // Color of the pointer
 		generateGradient: true
 	}
 	gauge = new Gauge(document.getElementById(gaugeElement)).setOptions(initialOptions);
@@ -51,28 +51,25 @@ function initGauge(isMem, gauge, initialVal, maxVal, gaugeElement, gaugeTextElem
 };
 
 // Update gauge values
-function updateGauge(checkMem, gauge, curVal)
-{
+function updateGauge(checkMem, gauge, curVal) {
 	gauge.set(curVal);
 
 	var newColor;
 	// If memory gauge
-	if (checkMem)
-	{
+	if (checkMem) {
 		// If value is under threshold, set gauge color to green. Otherwise, set to red
 		if (curVal < MEM_THRESHOLD)
-			newColor = '#12E84E';
+			newColor = SAFE_COLOR;
 		else
-			newColor = '#FF0000';
+			newColor = DANGER_COLOR;
 	}
 		// If CPU gauge
-	else
-	{
+	else {
 		// If value is under threshold, set gauge color to green. Otherwise, set to red
 		if (curVal < CPU_THRESHOLD)
-			newColor = '#12E84E';
+			newColor = SAFE_COLOR;
 		else
-			newColor = '#FF0000';
+			newColor = DANGER_COLOR;
 	}
 
 	// Set updated options for gauge
@@ -83,12 +80,12 @@ function updateGauge(checkMem, gauge, curVal)
 		pointer: {
 			length: .85,
 			strokeWidth: 0.025,
-			color: '#000000'
+			color: 'black'
 		},
 		limitMax: 'true',
 		colorStart: newColor,
 		colorStop: newColor,
-		strokeColor: '#E0E0E0',
+		strokeColor: STROKE_COLOR,
 		generateGradient: true
 	}
 
@@ -105,28 +102,22 @@ var optionsPrototype = {
 	pointer: {
 		length: .85, // The radius of the inner circle
 		strokeWidth: 0.025, // The rotation offset
-		color: '#000000' // Fill color
+		color: 'black' // Fill color
 	},
 	limitMax: 'true',   // If true, the pointer will not go past the end of the gauge
-	colorStart: '#12E84E',   // Colors
-	colorStop: '#12E84E',    // just experiment with them
-	strokeColor: '#E0E0E0',   // to see which ones work best for you
+	colorStart: SAFE_COLOR,   // Colors
+	colorStop: SAFE_COLOR,    // just experiment with them
+	strokeColor: STROKE_COLOR,   // to see which ones work best for you
 	generateGradient: true
 }
 
 // Options object constructor
-function Options ()
-{
-
-}
+function Options (){}
 Options.prototype = optionsPrototype;
 
-// Runs at the start of the webpage
-$(function()
-{
-	// Set the initial CPU gauge parameters
+// Executes when the web page loads
+$(function() {
+	// Set the initial CPU and memory gauge parameters
 	cpuGauge = initGauge(false, cpuGauge, initialCpuUsage, MAX_CPU_UTILIZATION, "canvas-gauge-1", "gauge-1-textfield");
-
-	// Set the initial memory gauge parameters
 	memoryGauge = initGauge(true, memoryGauge, initialUsedMem, totalMem, "canvas-gauge-2", "gauge-2-textfield");
 });

@@ -2,26 +2,22 @@
 <html>
   <head>
     <title>Auto Scaling Demo</title>
-    <meta name="description" content="Sample app to demonstrate Auto-Scaling service for Bluemix">
-    <meta name="viewport" content="width=1024, maximum-scale=1">
+    <meta name="description" content="Sample app to demonstrate the Bluemix Auto-Scaling service">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="shortcut icon" href="images/favicon.ico">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="css/main.css" type="text/css" rel="stylesheet">
   </head>
   <body>
-  <div id="screen-wrapper">
-    <div class="container-fluid">
-      {+content}
-          This is the base content.
-      {/content}
-    </div>
-    <div id="footer">
-      <div class="container">
-        <p class="muted credit">Made by <a href="http://twitter.com/jakepeyser">@jakepeyser</a>. Powered by <a href="http://bluemix.net" target="_blank">IBM Bluemix</a>.</p>
-      </div>
-    </div>
-
+  <div class="container-fluid">
+    {+content}
+        This is the base content.
+    {/content}
+    <div class="push"></div>
+  </div>
+  <div class="footer">
+    <p class="muted credit">Made by <a href="http://twitter.com/jakepeyser">@jakepeyser</a>. Powered by <a href="http://ibm.biz/auto-scaling-bluemix" target="_blank">IBM Bluemix</a>.</p>
   </div>
 
   <!-- Set initial mem values for gauges -->
@@ -32,10 +28,10 @@
   </script>
 
   <!-- Run all vendor JS scripts -->
-  <script src="javascript/jquery-1.11.2.min.js"></script>
+  <script src="vendor/jquery/dist/jquery.min.js"></script>
+  <script src="vendor/socket.io-client/socket.io.js"> </script>
   <script src="javascript/gauge.min.js"></script>
   <script src="javascript/manipulateGauges.js"></script>
-  <script src="javascript/socket.io.js"> </script>
 
   <!-- Subscribe to the memory and CPU change event sockets-->
   <script>
