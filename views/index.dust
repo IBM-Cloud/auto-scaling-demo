@@ -10,14 +10,14 @@
   <div class="instance-div">Instance <span class="instance-num">#{instanceIndex}</span></div>
 </div>
 <div id="gauge-background">
-  <div class="gauge-container">
-    <p class="gauge-header">CPU Utilization</h3>
+  <div class="gauge-container" id="cpu-container">
+    <h3 class="gauge-header">CPU Utilization</h3>
     <p class="threshold">Scale out at 50% and in at 20%</p>
     <canvas id="canvas-gauge-1" class="gauge"></canvas>
     <img class="gauge-value-hex" alt="cpu-value-hex">
     <div class="gauge-value" id="gauge-1-textfield"></div>
   </div>
-  <div class="gauge-container">
+  <div class="gauge-container" id="mem-container">
     <h3 class="gauge-header">Memory ({memLimit}MB)</h3>
     <p class="threshold">Scale out at 60% and in at 40%</p>
     <canvas id="canvas-gauge-2" class="gauge"></canvas>

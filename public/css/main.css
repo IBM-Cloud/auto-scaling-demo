@@ -95,15 +95,24 @@ html, body {
   width: 300px;
 }
 
+#mem-container {
+  margin-top: 15px;
+}
+
 .gauge-header {
   font-size: 2rem;
   padding-top: 8px;
+  margin-top: 0px;
   color: white;
 }
 
 .threshold {
   font-size: .9rem;
   color: white;
+}
+
+p {
+  margin: 0px;
 }
 
 .gauge-value-hex {
@@ -134,13 +143,17 @@ html, body {
     padding-top: 5px;
     padding-right: 5px;
     padding-left: 5px;
-    margin-top: 30px;
+    margin-top: 40px;
     text-align: center;
 }
 
 .footer, .push {
-  height: 1em;
+  height: 40px;
   clear: both;
+}
+
+.muted, .credit {
+  margin-top: 0px;
 }
 
 .footer, a {
