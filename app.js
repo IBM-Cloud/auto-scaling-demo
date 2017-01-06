@@ -43,7 +43,7 @@ if (process.env.VCAP_APPLICATION === undefined) {
   instance = -1;
 }
 else {
-  port = process.env.VCAP_APP_PORT;
+  port = process.env.PORT;
   application = process.env.VCAP_APPLICATION;
   memLimit = JSON.parse(process.env.VCAP_APPLICATION)['limits']['mem'];
   instance = JSON.parse(process.env.VCAP_APPLICATION)['instance_index'];
