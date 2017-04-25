@@ -26,7 +26,7 @@
     "commander": "2.9.x",
     "http-post": "0.1.x",
     "bower": "1.6.x",
-    "cf-deployment-tracker-client": "0.0.x"
+    "cf-deployment-tracker-client": "^0.x"
   },
   "author": [
     {
